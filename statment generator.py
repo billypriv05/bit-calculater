@@ -7,7 +7,7 @@ def statement_generator(text, decoration):
     end = decoration * 5
 
     # add decoration to the start and end of the statement
-    statement = "{} {} {}".format(ends, text, ends,)
+    statement = "{} {} {}".format(end, text, end,)
 
     print()   
     print(statement)

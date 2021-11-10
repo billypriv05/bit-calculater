@@ -7,7 +7,7 @@ def statement_generator(text, decoration):
     end = decoration * 5
 
     # add decoration to the start and end of the statement
-    statement = "{} {} {}".format(ends, text, ends,)
+    statement = "{} {} {}".format(end, text, end,)
 
     print()   
     print(statement)
@@ -50,6 +50,31 @@ def user_choice():
            print("please choose a valid file type!")
            print()    
 
+def num_check(question, low):
+    valid = False
+    while not valid:
+
+        error = "please enter a interger that is more or than "
+        "(or equal to) {}".format(low) 
+
+        try: 
+
+            # ask the user to enter a number        
+            response = int(input(question))
+
+            # checks if number is more than zero
+            if response >= low:
+                return response 
+
+            # outputs error if imput is invalid 
+            else:
+                print(error)
+                print() 
+
+        except ValueError:
+            print(error)
+
+
 # main routene goes here
 
 # heading
@@ -67,8 +92,12 @@ while keep_going == "":
     print("you chose", data_type)
 
     # for intergers, ask for interger 
-    # (must be an interger more than / eqaul to 0)
+    if data_type =="interger":
+        var_interger = num_check("enter an interge:", 0)
 
+    # (must be an interger more than / eqaul to 0)
+     elif data_type == num_check("image"):
+         image_width = num_check(image_width)
     # for images, ask for witdh and height 
 
 
