@@ -72,7 +72,34 @@ def num_check(question, low):
                 print() 
 
         except ValueError:
-            print(error)
+            print(error) 
+
+# finds # of bits for 24 bit colour 
+def int_bits():
+
+    # get interger (must be >= 0)
+    var_integer = num_check(" please enter an interger: ", 0)
+
+    # source for code below is
+    # httpls://stackoverflow.com/questions/699866/python-int-to-binary-string
+
+    var_binary = "{0:b} ".format(var_integer)
+
+    # calculate the # of bits ( lenght of string above)
+    num_bits = len(var_binary)
+
+    # output answer with working\
+    print()
+    print("{} in binary is {}".format(var_integer, var_binary))  
+    print(" # of bits {}".format(num_bits))
+    print() 
+
+    return ""
+
+# calculates the # of bits for text (# of characters x 8)
+def text_bits():
+
+
 
 
 # main routene goes here
@@ -96,7 +123,7 @@ while keep_going == "":
         var_interger = num_check("enter an interge:", 0)
 
     # (must be an interger more than / eqaul to 0)
-     elif data_type == num_check("image"):
+    elif data_type == num_check("image"):
          image_width = num_check(image_width)
     # for images, ask for witdh and height 
 
