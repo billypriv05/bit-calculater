@@ -97,15 +97,33 @@ def int_bits():
     return ""
 
 # calculates the # of bits for text (# of characters x 8)
-def text_bits():
+def text_bits(): 
 
+# finds # of bits for 24 bit colour
+ def image_bits():
 
+    # get width and height
+    image_width = num_check("image width? ", 1)
+    image_height = num_check("image height? ", 1) 
+    
+    # calculate # of pixels 
+    num_pixels = image_width * image_height 
 
+    # calculate # of bits ( 24 * num of pixels)
+    num_bits = num_pixels * 24
+
+    # output the answer with working
+    print()
+    print("# of pixels = {} x {} = {}".format(image_height, image_width, num_pixels))
+    print("# of bits = {} x 24 = {}".format(num_pixels, num_bits))
+    print()
+    
+    return ""
 
 # main routene goes here
 
 # heading
-statement_generator("bit calculater for, text & images","-")
+ statement_generator("bit calculater for, text & images","-")
 
 
 # display instruction if user has not used the program before
@@ -120,12 +138,28 @@ while keep_going == "":
 
     # for intergers, ask for interger 
     if data_type =="interger":
-        var_interger = num_check("enter an interge:", 0)
-
-    # (must be an interger more than / eqaul to 0)
-    elif data_type == num_check("image"):
-         image_width = num_check(image_width)
+        int_bits()
     # for images, ask for witdh and height 
+    # (must be an interger more than / eqaul to 1)
+    elif data_type == "image":
+         image_bits() 
+    
+    # for text, ask for a string   
+    else:
+        text_bits()
+
+    print() 
+    keep_going = input("press <enter> to continue or any other key to quit")
+    print()
+
+    
+    
+
+
+
+
+
+    
 
 
 
